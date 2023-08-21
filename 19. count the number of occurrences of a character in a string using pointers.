@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int countOccurrences(const char *str, char target) {
+    int count = 0;
+
+    while (*str != '\0') {
+        if (*str == target) {
+            count++;
+        }
+        str++;
+    }
+
+    return count;
+}
+
+int main() {
+    char inputString[100];
+    char targetChar;
+
+    printf("Enter a string: ");
+    scanf("%s", inputString);
+
+    printf("Enter the character to count: ");
+    scanf(" %c", &targetChar);
+
+    int occurrences = countOccurrences(inputString, targetChar);
+    printf("The character '%c' occurs %d times in the string.\n", targetChar, occurrences);
+
+    return 0;
+}
